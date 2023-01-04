@@ -2,14 +2,8 @@
 #include <stdlib.h>
 //#include <malloc.h>
 
-
-
-
-
-
-int main(int argc, char const *argv[])
+void test01()
 {
-
     //在堆区申请单个内存空间
     //p: 栈区空间 存放地址
     //
@@ -48,5 +42,22 @@ int main(int argc, char const *argv[])
     int num; //栈区
     int *p2 = &num; //栈区
 */
+}
+
+int * fun()
+{
+    static int num = 520;
+    return &num;
+}
+
+int main(int argc, char const *argv[])
+{
+    int *n = fun();
+    printf("*n = %d\n",*n);
+
+    *fun() = 1314;
+    printf("*fun() = %d\n",*fun());
+    printf("*n = %d\n",*n);
     return 0;
 }
+
