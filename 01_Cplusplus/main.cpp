@@ -46,8 +46,41 @@ int main()
    cout << __LINE__ << " line obj numbers:" << Myclass::num << endl;
    */
 
+    /* 4
+     *  unsigned int a = 6;
+         int b = -20;
+     */
+
+    /* 4
+     *  short a = 6;
+         short b = -20;
+     */
+    /* 4
+     *  char a = 6;
+         short b = -20;
+     */
+
+    /* 4
+     *  char a = 6;
+         char b = -20;
+     */
+
+    /* 4
+     *  unsigned int a = 6;
+         char b = -20;
+     */
+
+     unsigned short a = 6;
+        short b = -20;
 
 
- cout << "Hello World!" << endl;
+        (a+b > 6)?puts(">6"):puts("<6");
+        cout<<(a+b);
+        printf("sizeof unsigned short=%ld\n",sizeof(unsigned short)); //2
+        printf("sizeof a+b=%ld\n",sizeof(a+b)); //4
+        printf("sizeof  short=%ld\n",sizeof(short)); //2
+        return 0;
+
+
     return 0;
 }
