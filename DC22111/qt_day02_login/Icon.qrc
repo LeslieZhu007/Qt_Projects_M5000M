@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>pic/cancel.png</file>
+        <file>pic/lock.png</file>
+        <file>pic/login.png</file>
+        <file>pic/logo.png</file>
+        <file>pic/passwd.jpg</file>
+        <file>pic/qq.png</file>
+        <file>pic/Qt.png</file>
+        <file>pic/userName.jpg</file>
+    </qresource>
+</RCC>

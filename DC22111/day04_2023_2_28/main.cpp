@@ -53,15 +53,16 @@ public:
         return temp;
     }
 
+    /*
     //自增自减运算符
-    //前置自增
+    //前置自增--> 类内
     const complex& operator++(void)
     {
         ++this->real;
         ++this->image;
         return *this;
     }
-    //后置自增
+    //后置自增 -->类内
     const complex operator++(int)
     {
         complex temp;
@@ -69,8 +70,16 @@ public:
         temp.image = this->image++;
         return temp;
     }
+*/
+    friend const complex& operator++(complex &O);
 
+    friend const complex operator++(complex &O,int);
 
+    //>>   <<的重载
+    // istream& operator>>(istream& input,类名& R)
+    // ostream& operator<<(ostream& output 类名&R)
+   friend  istream& operator>>(istream& input,complex& R);
+   friend  ostream& operator<<(ostream& output,complex& R);
 };
 
 const complex operator+(const complex &L,const complex &R)
@@ -158,6 +167,42 @@ void test07()
      c3 = c1++;
      c1.show();
      c3.show();
+}
+
+
+const complex& operator++(complex &O)
+{
+    ++O.real;
+    ++O.image;
+    return O;
+}
+//后置自增 -->类内
+const complex operator++(complex &O,int)
+{
+    complex temp;
+    temp.real = O.real++;
+    temp.image =O.image++;
+    return temp;
+}
+
+
+//>>     <<
+istream& operator>>(istream& input,complex& R)
+{
+    input>>R.real>>R.image;
+    return input;
+}
+
+ostream& operator<<(ostream& output,complex& R)
+{
+    output<<R.real<<","<<R.image;
+    return output;
+}
+
+
+void test08()
+{
+     complex c1(1,2),c3;
 }
 
 int main()
